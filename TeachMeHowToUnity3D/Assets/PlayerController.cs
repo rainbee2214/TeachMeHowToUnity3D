@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Shooting gun!");
         gun.MoveIntoPosition(transform.position);
-        
         nextShootTime = shootDelay + Time.time;
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class GunController : MonoBehaviour
 {
+    public float force = 1f;
     public int poolSize = 10;
     List<GameObject> objectPool;
     GameObject bullet;
@@ -19,7 +20,7 @@ public class GunController : MonoBehaviour
     {
         objectPool[index].transform.position = newPosition;
         objectPool[index].SetActive(true);
-
+        objectPool[index].rigidbody.AddForce(0f, 0f, force);
         index++;
         if (index >= objectPool.Count) index = 0;
     }
